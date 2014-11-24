@@ -1,0 +1,31 @@
+
+.form {
+    display: none;
+}
+
+table td.country {
+    cursor: pointer;
+}
+
+.note {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+table {
+    display: inline;
+    margin-right: 20px;
+}
+
+table td {
+    border-bottom: 1px solid #000;
+}
+
+table thead {
+    font-weight: bold;
+}
+
+table tbody {
+    font-size: 13px;
+}
