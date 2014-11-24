@@ -8,14 +8,13 @@ $(document).ready(function () {
             $('body').append('<table></table>');
             $('table').append('<thead><tr></tr></thead><tbody></tbody>');
             
-            $.each(data[0], function(k) {
-                $('table thead tr').append('<td>' + k + '</td>');
-            });
-            
             $.each(data, function (k) {
                 $('table tbody').append('<tr></tr>');
                 var row = $('table tbody tr:last');
-                $.each(data[k], function() {
+                $.each(data[k], function(key) {
+                    if(k == 0) {
+                        $('table thead tr').append('<td>' + key + '</td>')
+                    }
                     row.append('<td>' + this + '</td>');
                 });
             });
