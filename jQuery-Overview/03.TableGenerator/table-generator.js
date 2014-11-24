@@ -6,17 +6,18 @@ $(document).ready(function () {
 
         if (data.length > 0) {
             $('body').append('<table></table>');
-            $('table').append('<thead></thead><tbody></tbody>');
-            $('table thead').append('<tr><td>Manufacturer</td><td>Model</td><td>Year</td><td>Price</td><td>Class</td></tr>')
+            $('table').append('<thead><tr></tr></thead><tbody></tbody>');
             
-            $.each(data, function () {
+            $.each(data[0], function(k) {
+                $('table thead tr').append('<td>' + k + '</td>');
+            });
+            
+            $.each(data, function (k) {
                 $('table tbody').append('<tr></tr>');
                 var row = $('table tbody tr:last');
-                row.append('<td>' + this.manufacturer + '</td>')
-                        .append('<td>' + this.model + '</td>')
-                        .append('<td>' + this.year + '</td>')
-                        .append('<td>' + this.price + '</td>')
-                        .append('<td>' + this.class + '</td>');
+                $.each(data[k], function() {
+                    row.append('<td>' + this + '</td>');
+                });
             });
         }
     });
